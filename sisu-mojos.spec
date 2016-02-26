@@ -4,7 +4,7 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        0.3.1
-Release:        2.1%{?dist}
+Release:        2.2%{?dist}
 Summary:        Sisu plugin for Apache Maven
 License:        EPL
 URL:            http://www.eclipse.org/sisu
@@ -12,7 +12,7 @@ BuildArch:      noarch
 
 Source0:        http://git.eclipse.org/c/sisu/org.eclipse.sisu.mojos.git/snapshot/releases/%{version}.tar.bz2#/%{pkg_name}-%{version}.tar.bz2
 
-BuildRequires:  %{?scl_prefix_java_common}maven-local
+BuildRequires:  %{?scl_prefix}maven-local
 BuildRequires:  %{?scl_prefix_java_common}mvn(junit:junit)
 BuildRequires:  %{?scl_prefix}mvn(org.apache.maven:maven-plugin-api)
 BuildRequires:  %{?scl_prefix}mvn(org.apache.maven.plugins:maven-plugin-plugin)
@@ -63,6 +63,9 @@ set -e -x
 %doc LICENSE.txt
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 0.3.1-2.2
+- Fix BR on maven-local & co.
+
 * Tue Jan 12 2016 Mikolaj Izdebski <mizdebsk@redhat.com> - 0.3.1-2.1
 - SCL-ize package
 
