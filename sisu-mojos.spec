@@ -4,7 +4,7 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        0.3.1
-Release:        2.2%{?dist}
+Release:        2.3%{?dist}
 Summary:        Sisu plugin for Apache Maven
 License:        EPL
 URL:            http://www.eclipse.org/sisu
@@ -57,12 +57,16 @@ set -e -x
 
 %files -f .mfiles
 %dir %{_javadir}/%{pkg_name}
+%dir %{_mavenpomdir}/%{pkg_name}
 %doc LICENSE.txt
 
 %files javadoc -f .mfiles-javadoc
 %doc LICENSE.txt
 
 %changelog
+* Thu Apr 14 2016 Michal Srb <msrb@redhat.com> - 0.3.1-2.3
+- Fix directory ownership (Resolves: rhbz#1325866)
+
 * Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 0.3.1-2.2
 - Fix BR on maven-local & co.
 
